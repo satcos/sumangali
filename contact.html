@@ -100,7 +100,26 @@
                         });
                     }
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEs1FEU3Ul4-6i5NWsZkT9BmtQAiuZZd0&callback=initMap"></script>
+                <script>
+                    function initialize() {
+                        var myLatLng = new google.maps.LatLng(13.1608614, 80.3015234);
+                        var mapProp = {
+                            center:myLatLng,
+                            zoom:18,
+                            scrollwheel: false,
+                            mapTypeId:google.maps.MapTypeId.ROADMAP
+                        };
+                        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            title: 'Sumangali Digital Studio, Head Office'
+                        });
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEs1FEU3Ul4-6i5NWsZkT9BmtQAiuZZd0&callback=initMap"></script> -->
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEs1FEU3Ul4-6i5NWsZkT9BmtQAiuZZd0&callback=initialize"></script>
             </div>
 
 
